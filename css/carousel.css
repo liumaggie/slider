@@ -1,0 +1,28 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: lightblue;
+  padding: 10px;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 10px;
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid lightgreen;
+}
+
+a {
+  color: lightgreen;
+  font-weight: bold;
+}
+
+.carousel {
+  display: flex;
+}
