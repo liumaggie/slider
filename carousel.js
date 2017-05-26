@@ -4,10 +4,11 @@ class Carousel {
   constructor() {
     this.slides = $('.item').length;
     this.currentSlide = 0;
-    this.bindEvents();
     this.next = this.next.bind(this);
     this.previous = this.previous.bind(this);
     this.update = this.update.bind(this);
+    this.bindEvents();
+    this.update();
   }
 
   bindEvents() {
@@ -35,6 +36,7 @@ class Carousel {
 
 		let translateValue = `translate3d(-${this.currentSlide*600}px, 0px, 0)`;
 		$('.carousel').css('transform', translateValue);
+
   }
 
   previous() {
@@ -44,12 +46,13 @@ class Carousel {
 
 		let translateValue = `translate3d(-${this.currentSlide*600}px, 0px, 0)`;
 		$('.carousel').css('transform', translateValue);
+
   }
 
   update() {
-    setTimeout(() => {
+    setInterval(() => {
       this.next();
-    }, 2000);
+    }, 5000);
   }
 }
 

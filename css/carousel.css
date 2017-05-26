@@ -1,8 +1,13 @@
+body {
+  background-color: #f0f0f0;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: lightblue;
+  background-color: white;
+  border-bottom: 1px solid lightblue;
   padding: 10px;
 }
 
@@ -30,6 +35,7 @@ a {
   position: relative;
   left: 28%;
   text-align: center;
+  margin-top: 50px;
 }
 
 .carousel {
