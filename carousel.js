@@ -5,40 +5,44 @@ class Carousel {
     this.slides = $('.item').length;
     this.currentSlide = 0;
     this.bindEvents();
+    this.next = this.next.bind(this);
+    this.previous = this.previous.bind(this);
+    this.update = this.update.bind(this);
   }
 
   bindEvents() {
+    let that = this;
     $(".next").on("click",function(){
-			Carousel.next();
+			that.next();
 		});
 		$(".prev").on("click",function(){
-			Carousel.previous();
+			that.previous();
 		});
 		$(document).on("keydown", function(e) {
 			if (e.keyCode === 37) {
-				Carousel.previous();
+				that.previous();
 			} else if (e.keyCode === 39) {
-				Carousel.next();
+				that.next();
 			}
 		});
   }
 
   next() {
-    if (this.current_slide !== this.total_slides - 1) {
-			this.current_slide =
-			(this.current_slide + 1) % this.total_slides;
+    if (this.currentSlide !== this.slides - 1) {
+			this.currentSlide =
+			(this.currentSlide + 1) % this.slides;
 		}
 
-		let translateValue = `translate3d(-${this.current_slide*600}px, 0px, 0)`;
+		let translateValue = `translate3d(-${this.currentSlide*600}px, 0px, 0)`;
 		$('.carousel').css('transform', translateValue);
   }
 
-  prev() {
-    if (this.current_slide !== 0) {
-			this.current_slide = this.current_slide - 1;
+  previous() {
+    if (this.currentSlide !== 0) {
+			this.currentSlide = this.currentSlide - 1;
 		}
 
-		let translateValue = `translate3d(-${this.current_slide*600}px, 0px, 0)`;
+		let translateValue = `translate3d(-${this.currentSlide*600}px, 0px, 0)`;
 		$('.carousel').css('transform', translateValue);
   }
 
@@ -49,5 +53,6 @@ class Carousel {
   }
 }
 
-const carousel = new Carousel();
-carousel.update();
+$(window).on("DOMContentLoaded", () => {
+  const carousel = new Carousel();
+});

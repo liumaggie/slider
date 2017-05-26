@@ -64,6 +64,7 @@ a {
 	padding:20px;
 	cursor:pointer;
 	margin-top:-80px;
+  z-index: 2;
 }
 
 .prev {
