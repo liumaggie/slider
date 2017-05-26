@@ -42,12 +42,16 @@ a {
   font-weight: bold;
 }
 
+.carousel-container-wrapper {
+  width: 100%;
+}
+
 .carousel-container {
   width: 600px;
   height: 500px;
+  margin: 0 auto;
   overflow: hidden;
   position: relative;
-  left: 28%;
   text-align: center;
   margin-top: 50px;
 }
